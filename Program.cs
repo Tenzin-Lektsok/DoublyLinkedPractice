@@ -78,6 +78,26 @@ namespace LearnDoublyLinkedList
             }
             size++; //count is incremented by 1
         }    
+        
+        public void addFirst(int e)
+        {
+            Node newest = new Node(e, null, null);
+            if (isEmpty())
+            {
+                //if list is empty then head and tail pointer to new node newest.
+                head = newest;
+                tail = newest;
+            }
+            else
+            {
+                //If list is not empty than add newest node at begining of list.
+                newest.next = head; // forward link is created in list
+                head.prev = newest; //backward link is created in list
+                head = newest; //head pointer update to newest node as now it's first node of list.
+            }
+            size++; //update size or length of list by 1.
+          
+        }
 
         public void display()
         {

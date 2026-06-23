@@ -28,6 +28,22 @@ namespace LearnDoublyLinkedList
 
     class DoublyLinkedList
     {
+        //Within doubly linked list class we declare head of type node to store reference of first Node of doubly linked list
+        private Node head;
+        //Declare also type node to store reference of last node of doubly linked list
+        private Node tail;
+        // We declare a variable size to track and store the count of the number of nodes present in the doubly linked list at any given time."
+        private int size;
+
+        //Constructor  for class to intialize head,tail, and size member of doubly linked list.
+        public DoublyLinkedList()
+        {
+           head = null; //No first node yet
+            tail = null; //No last node yet
+            size = 0; //Zero as intially doubly linked list is empty.
+        }
+            
+            
         static void Main(string[] args)
         {
 

@@ -42,7 +42,14 @@ namespace LearnDoublyLinkedList
             tail = null; //No last node yet
             size = 0; //Zero as intially doubly linked list is empty.
         }
-            
+
+       // Method to return the number of elements or length of the doubly linked list
+       // as the size variable stores the count of elements in the doubly linked list.
+        public int length()
+        {
+            return size;
+        }    
+        
             
         static void Main(string[] args)
         {

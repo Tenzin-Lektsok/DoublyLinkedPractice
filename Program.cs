@@ -56,7 +56,29 @@ namespace LearnDoublyLinkedList
             return size == 0;
         }
 
-        
+        // Method to insert a node at the end of the doubly linked list with the input parameter e.
+        public void addLast(int e)
+        {
+            //new node is always created first, then if condition is always checked second, and size is always incremented last. 
+            Node newest = new Node(e,null,null);
+
+            if(isEmpty())
+            {
+                head = newest;
+                tail = newest;
+            }
+            else
+            {
+                //if doubly linked list is not empty, tail's next reference is connected to newest node, yet newest node's prev reference is not linked back to tail.
+                tail.next = newest; 
+              //newest node's prev reference is connected back to tail node,completing the backward link between newest and tail.
+                newest.prev = tail;
+                // tail reference is moved to newest node,after that the newest pointer will disappea as it is a temporary variable inside the method.
+                tail = newest;
+            }
+            size++; //count is incremented by 1
+        }    
+            
             
         static void Main(string[] args)
         {

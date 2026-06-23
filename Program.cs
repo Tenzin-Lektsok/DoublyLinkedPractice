@@ -98,6 +98,34 @@ namespace LearnDoublyLinkedList
             size++; //update size or length of list by 1.
           
         }
+        public void addAny(int e,int position)
+        {
+            // If position is less than or equal to 0, it is invalid because position cannot be negative or zero.
+            // If position is 1, we insert at the beginning of the list, already handled by addFirst().
+            // If position is greater than size, it is invalid because there is no node at that index to insert before.
+            if (position <= 0 || position >= size)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            Node newest = new Node(e, null, null);
+            Node p = head;
+            int i = 1;
+            while(i< position - 1)
+            {
+                p =p.next; //move to next node.
+                i++; //increment counter to track how many nodes we have traversed
+            }
+            // Link the new node to the next node so the remaining list is not lost
+            newest.next = p.next;
+            //Since it is a doubly linked list, update the previous link of the next node, so it now points back to the new node
+            p.next.prev = newest;
+            // Now connect the current node (p) to the new node in forward direction
+            p.next = newest;
+            //Complete the backward link from new node to p
+            newest.prev = p;
+            size++;// Increase the size of the list as one new node is added
+
+        }
 
         public void display()
         {

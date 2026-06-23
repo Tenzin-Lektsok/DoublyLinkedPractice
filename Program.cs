@@ -135,6 +135,9 @@ namespace LearnDoublyLinkedList
             {
                 Console.WriteLine("List is not empty.");
             }
+            myList.addFirst(15);
+            myList.display();
+            Console.WriteLine($"Size of List is  { myList.length()}");
 
             //link is https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205590#content
             Console.ReadLine();

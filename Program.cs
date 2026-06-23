@@ -49,6 +49,13 @@ namespace LearnDoublyLinkedList
         {
             return size;
         }    
+
+        //Method isEmpty is implemented using a boolean to check whether the doubly linked list is empty or not.
+        public bool isEmpty()
+        {
+            return size == 0;
+        }
+
         
             
         static void Main(string[] args)

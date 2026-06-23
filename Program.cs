@@ -95,6 +95,29 @@ namespace LearnDoublyLinkedList
             
         static void Main(string[] args)
         {
+              DoublyLinkedList myList = new DoublyLinkedList();
+            myList.addLast(7);
+            myList.addLast(4);
+            myList.addLast(12);
+            myList.addLast(3);
+
+            myList.display();
+
+            Console.WriteLine("Size of doubly linked list is " + myList.length());
+            Console.WriteLine("Is my list is empty: false mean not empty and true mean empty: "+ myList.isEmpty());
+
+            bool empty = myList.isEmpty();
+            if (empty)
+            {
+                Console.WriteLine("List is empty.");
+            }
+            else
+            {
+                Console.WriteLine("List is not empty.");
+            }
+
+            //link is https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205590#content
+            Console.ReadLine();
 
         }
     }

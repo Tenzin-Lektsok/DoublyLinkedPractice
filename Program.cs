@@ -6,7 +6,7 @@ namespace LearnDoublyLinkedList
 {
     //Doubly linked contain collections of element represented by nodes,thus create class Node,
     //Node contain data that is element value along memory addrees of immediate next Node as well as immediate prevouis Node. 
-    public Class Node
+    public class Node
     {
         
         public int elememnt; // Variable type int
@@ -78,7 +78,20 @@ namespace LearnDoublyLinkedList
             }
             size++; //count is incremented by 1
         }    
-            
+
+        public void display()
+        {
+            Node p = head; //To display list of items in doubly linked list, it must traverse via head as it's entry point to entire list.
+           // While loop is implemented as the number of nodes in the doubly linked list is unpredictable, and the last node's next reference is always null,
+           // thus the condition is not equal to null.
+            while(p!= null)
+            {
+                Console.WriteLine(p.element + ": ");
+                p = p.next;
+            }
+            //Add a new line after displaying all elements of the doubly linked list.
+            Console.WriteLine();
+        }
             
         static void Main(string[] args)
         {

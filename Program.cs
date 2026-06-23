@@ -144,6 +144,7 @@ namespace LearnDoublyLinkedList
         static void Main(string[] args)
         {
               DoublyLinkedList myList = new DoublyLinkedList();
+            Console.WriteLine("\naddLast Method: ");
             myList.addLast(7);
             myList.addLast(4);
             myList.addLast(12);
@@ -163,10 +164,15 @@ namespace LearnDoublyLinkedList
             {
                 Console.WriteLine("List is not empty.");
             }
+            Console.WriteLine("\naddFirst Method: ");
             myList.addFirst(15);
             myList.display();
             Console.WriteLine($"Size of List is  { myList.length()}");
 
+            Console.WriteLine("\naddAny Method: ");
+            myList.addAny(23, 3);
+            myList.display();
+            Console.WriteLine($"Size of List is  {myList.length()}");
             //link is https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205590#content
              //https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205582#content
             Console.ReadLine();

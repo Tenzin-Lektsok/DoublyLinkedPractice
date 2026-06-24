@@ -183,6 +183,46 @@ namespace LearnDoublyLinkedList
             return e;
         }
 
+        public int removeAny(int position)
+        {
+            // If position is less than or equal to 0, it is invalid because position cannot be negative or zero.
+            // If position is greater than or equal to size - 1, it is invalid because those are handled by removeFirst() and removeLast().
+            if (position <= 0 || position >= size - 1)
+            {
+                Console.WriteLine("Invalid position.");
+                return -1; // -1 means we cannot delete element at this position
+            }
+
+            // Create a pointer p starting at head and a counter i starting at 1 to track how many nodes we have traversed.
+            Node p = head;
+            int i = 1;
+
+            // Traverse the list until we reach the node before the node we are deleting.
+            // We stop at position - 1 because p.next will be pointing to the node we are deleting.
+            while (i < position - 1)
+            {
+                p = p.next; // move to next node
+                i++;        // increment counter to track how many nodes we have traversed
+            }
+
+            // Save the data of the node we are deleting so we can return it at the end.
+            int e = p.next.element;
+
+            // Skip over the deleted node by linking p directly to the node after the deleted node.
+            // The deleted node now has no reference pointing to it, so garbage collector will clean it up.
+            p.next = p.next.next;
+
+            // The node after the deleted node still has its prev pointing to the deleted node.
+            // So we set it to p to fix that broken link.
+            p.next.prev = p;
+
+            // Decrease the size by one since we removed a node.
+            size--;
+
+            // Return the saved data of the deleted node.
+            return e;
+        }
+
         public void display()
         {
             Node p = head; //To display list of items in doubly linked list, it must traverse via head as it's entry point to entire list.

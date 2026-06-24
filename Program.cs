@@ -157,6 +157,32 @@ namespace LearnDoublyLinkedList
             return e;
         }
 
+        public int removeLast()
+        {
+            // If the list is empty, we cannot remove any element, so we print a message and return -1.
+            if (isEmpty())
+            {
+                Console.WriteLine("Doubly linked list is empty");
+                return -1;
+            }
+
+            // Save the data of the last node so we can return it at the end after tail has moved backward.
+            int e = tail.element;
+
+            // Move tail backward to the previous node, making it the new last node.
+            // The old tail node now has no reference pointing to it, so garbage collector will clean it up.
+            tail = tail.prev;
+
+            // The new tail's next is still pointing to the deleted node, so we set it to null to remove that broken link.
+            tail.next = null;
+
+            // Decrease the size by one since we removed a node.
+            size--;
+
+            // Return the saved data of the deleted node.
+            return e;
+        }
+
         public void display()
         {
             Node p = head; //To display list of items in doubly linked list, it must traverse via head as it's entry point to entire list.

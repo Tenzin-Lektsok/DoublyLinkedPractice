@@ -126,6 +126,36 @@ namespace LearnDoublyLinkedList
             size++;// Increase the size of the list as one new node is added
 
         }
+         public int RemoveFirst()
+        {
+            // // If the list is empty, we cannot remove any element, so we print a message and return -1.
+            if (isEmpty())
+            {
+                Console.WriteLine("Doubly linked list is empty.");
+                return -1;
+            }
+            // Save the data of the first node so we can return it at the end after head has moved forward.
+            int e = head.element;
+            // Move head forward to the second node, making it the new first node.
+            // The old head node now has no reference pointing to it, so garbage collector will clean it up.
+            head = head.next;
+            // Decrease the size by one since we removed a node.
+            size--;
+            // If the list had only one node, after deleting it the list is now empty.
+            // Head is already null from head = head.next, but tail is still pointing to the deleted node.
+            // So we manually set tail to null.
+            if (isEmpty())
+            {
+                tail = null;
+            }
+            else
+            {
+                // If the list had more than one node, the new head's prev is still pointing to the deleted node.
+                // So we set head.prev to null to remove that broken link.
+                head.prev = null;
+            }
+            return e;
+        }
 
         public void display()
         {

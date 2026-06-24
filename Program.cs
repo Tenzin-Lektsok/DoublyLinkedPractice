@@ -203,6 +203,11 @@ namespace LearnDoublyLinkedList
             myList.addAny(23, 3);
             myList.display();
             Console.WriteLine($"Size of List is  {myList.length()}");
+
+            Console.WriteLine("\nRemoveFirst method: ");
+            int element = myList.RemoveFirst(); Console.WriteLine("Removed element: "+ element);
+            myList.display();
+            Console.WriteLine($"Size of list after removing first element is {myList.length()}");
             //link is https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205590#content
              //https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205582#content
             //https://www.udemy.com/course/data-structures-and-algorithms-in-depth-using-c-sharp/learn/lecture/23205572#content
